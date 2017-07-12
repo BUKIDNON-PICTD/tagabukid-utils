@@ -1,0 +1,41 @@
+<workunit>
+    <invokers>
+        <invoker type="attachmentpdf:view" action="init" caption="Attachment Viewer" target="popup" />
+        <invoker type="formActions" action="_close" caption="Close" mnemonic="c" />
+    </invokers>
+    
+    <code lang="groovy">
+
+<![CDATA[        
+
+import com.rameses.rcp.common.*
+import com.rameses.rcp.annotations.*
+import com.rameses.osiris2.client.*
+import com.rameses.gov.etracs.rpt.util.*;
+import tagabukid.utils.*;
+
+public class PDFViewerController 
+{
+    
+    @Binding
+    def binding;
+    
+    def entity;
+    def pdfModel;
+    public String getTitle(){
+        return entity.title + ' Attachment'
+    }
+    
+    void init(){
+        pdfModel = TagabukidDBImageUtil.getInstance().getImage2(entity.objid)
+    }
+}
+
+]]>
+</code>
+    
+    <pages>
+        <page template="tagabukid.utils.AttachmentPDFViewer" />
+    </pages>
+</workunit>
+

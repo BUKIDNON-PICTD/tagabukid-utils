@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workunit>
+    <invokers>
+        <invoker type="upload:attachment" action="init" caption="Upload Attachment" target="popup" />
+    </invokers>
+    
+        <code class="tagabukid.utils.UploadAttachmentController"/>
+    
+    <pages>
+        <page template="tagabukid.utils.AttachmentPage" />
+    </pages>
+</workunit>
+
